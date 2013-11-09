@@ -19,6 +19,11 @@
 		32C2CFF7181D333100472A5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C2CFDF181D333000472A5E /* UIKit.framework */; };
 		32C2CFFF181D333100472A5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32C2CFFD181D333100472A5E /* InfoPlist.strings */; };
 		32C2D001181D333100472A5E /* XFDebugMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D000181D333100472A5E /* XFDebugMenuTests.m */; };
+		32C2D00C181D338E00472A5E /* XFRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D00B181D338E00472A5E /* XFRuntime.m */; };
+		32C2D00F181D359E00472A5E /* XFClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D00E181D359E00472A5E /* XFClass.m */; };
+		32C2D012181D560600472A5E /* XFMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D011181D560600472A5E /* XFMethod.m */; };
+		32C2D016181E59CE00472A5E /* XFProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D015181E59CE00472A5E /* XFProperty.m */; };
+		32C2D019181E59D800472A5E /* XFVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2D018181E59D800472A5E /* XFVariable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,16 @@
 		32C2CFFC181D333100472A5E /* XFDebugMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XFDebugMenuTests-Info.plist"; sourceTree = "<group>"; };
 		32C2CFFE181D333100472A5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		32C2D000181D333100472A5E /* XFDebugMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XFDebugMenuTests.m; sourceTree = "<group>"; };
+		32C2D00A181D338E00472A5E /* XFRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRuntime.h; sourceTree = "<group>"; };
+		32C2D00B181D338E00472A5E /* XFRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRuntime.m; sourceTree = "<group>"; };
+		32C2D00D181D359E00472A5E /* XFClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFClass.h; sourceTree = "<group>"; };
+		32C2D00E181D359E00472A5E /* XFClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFClass.m; sourceTree = "<group>"; };
+		32C2D010181D560600472A5E /* XFMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFMethod.h; sourceTree = "<group>"; };
+		32C2D011181D560600472A5E /* XFMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFMethod.m; sourceTree = "<group>"; };
+		32C2D014181E59CE00472A5E /* XFProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFProperty.h; sourceTree = "<group>"; };
+		32C2D015181E59CE00472A5E /* XFProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFProperty.m; sourceTree = "<group>"; };
+		32C2D017181E59D800472A5E /* XFVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFVariable.h; sourceTree = "<group>"; };
+		32C2D018181E59D800472A5E /* XFVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFVariable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +124,7 @@
 			children = (
 				32C2CFEA181D333000472A5E /* XFAppDelegate.h */,
 				32C2CFEB181D333000472A5E /* XFAppDelegate.m */,
+				32C2D013181D561700472A5E /* Runtime Stuff */,
 				32C2CFED181D333000472A5E /* Images.xcassets */,
 				32C2CFE2181D333000472A5E /* Supporting Files */,
 			);
@@ -142,6 +158,23 @@
 				32C2CFFD181D333100472A5E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32C2D013181D561700472A5E /* Runtime Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				32C2D010181D560600472A5E /* XFMethod.h */,
+				32C2D011181D560600472A5E /* XFMethod.m */,
+				32C2D00A181D338E00472A5E /* XFRuntime.h */,
+				32C2D00B181D338E00472A5E /* XFRuntime.m */,
+				32C2D00D181D359E00472A5E /* XFClass.h */,
+				32C2D00E181D359E00472A5E /* XFClass.m */,
+				32C2D014181E59CE00472A5E /* XFProperty.h */,
+				32C2D015181E59CE00472A5E /* XFProperty.m */,
+				32C2D017181E59D800472A5E /* XFVariable.h */,
+				32C2D018181E59D800472A5E /* XFVariable.m */,
+			);
+			name = "Runtime Stuff";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C2D016181E59CE00472A5E /* XFProperty.m in Sources */,
+				32C2D012181D560600472A5E /* XFMethod.m in Sources */,
+				32C2D00F181D359E00472A5E /* XFClass.m in Sources */,
+				32C2D019181E59D800472A5E /* XFVariable.m in Sources */,
 				32C2CFEC181D333000472A5E /* XFAppDelegate.m in Sources */,
+				32C2D00C181D338E00472A5E /* XFRuntime.m in Sources */,
 				32C2CFE8181D333000472A5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

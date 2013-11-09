@@ -7,6 +7,8 @@
 //
 
 #import "XFAppDelegate.h"
+#import "XFRuntime.h"
+#import "XFClass.h"
 
 @implementation XFAppDelegate
 
@@ -16,6 +18,17 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    XFRuntime *rt = [XFRuntime sharedRuntime];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSArray *classes = rt.classes;
+        
+        NSLog(@"%@", [classes.lastObject instanceMethods]);
+    });
+    
+    
     return YES;
 }
 
