@@ -480,6 +480,7 @@
 				32C2D006181D333100472A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32C2D007181D333100472A5E /* Build configuration list for PBXNativeTarget "XFDebugMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +489,7 @@
 				32C2D009181D333100472A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

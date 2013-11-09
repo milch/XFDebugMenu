@@ -9,6 +9,8 @@
 #import "XFClass.h"
 #import <objc/runtime.h>
 #import "XFMethod.h"
+#import "XFVariable.h"
+#import "XFProperty.h"
 
 @implementation XFClass {
     NSArray *_instanceMethods, *_classMethods, *_properties, *_protocols;
@@ -84,12 +86,17 @@ static NSMutableDictionary *classes = nil;
     
     for (int i = 0; i < count; i++) {
         objc_property_t property = properties[i];
-        
+        XFProperty *prop = [XFProperty propertyWithPrimitive:property];
+        [arr addObject:prop];
     }
     
     free(properties);
     _properties = arr.copy;
     return _properties;
+}
+
+- (NSArray *)protocols {
+    return nil;
 }
 
 - (NSString *)description {
