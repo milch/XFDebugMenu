@@ -17,6 +17,7 @@
 @property (nonatomic, strong, readonly) NSArray *classMethods;
 @property (nonatomic, strong, readonly) NSArray *properties;
 @property (nonatomic, strong, readonly) NSArray *protocols;
+@property (nonatomic, strong, readonly) NSArray *instanceVariables;
 @property (nonatomic, weak, readonly) XFClass *superClass;
 
 @end

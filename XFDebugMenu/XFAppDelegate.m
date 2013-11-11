@@ -7,8 +7,7 @@
 //
 
 #import "XFAppDelegate.h"
-#import "XFRuntime.h"
-#import "XFClass.h"
+#import "XFClassesViewController.h"
 
 @implementation XFAppDelegate
 
@@ -17,16 +16,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[XFClassesViewController alloc] initWithStyle:UITableViewStylePlain]];
+    
+    self.window.rootViewController = nav;
+    
     [self.window makeKeyAndVisible];
     
-    XFRuntime *rt = [XFRuntime sharedRuntime];
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSArray *classes = rt.classes;
-        
-        NSLog(@"%@", [classes.lastObject instanceMethods]);
-    });
     
     
     return YES;

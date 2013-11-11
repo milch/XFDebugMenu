@@ -9,9 +9,10 @@
 #import "XFRuntime.h"
 #import <objc/objc.h>
 #import <objc/runtime.h>
-#import "XFClass.h"
 
-@implementation XFRuntime
+@implementation XFRuntime {
+    void *_classesMemory;
+}
 
 static XFRuntime *_sharedRuntime = nil;
 + (instancetype)sharedRuntime {
@@ -38,12 +39,16 @@ static XFRuntime *_sharedRuntime = nil;
         numClasses = objc_getClassList(classes, numClasses);
         for (int i = 0; i < numClasses; i++) {
             NSString *className = NSStringFromClass(classes[i]);
-            [returnArray addObject:[XFClass classWithClassName:className]];
+            if(className) [returnArray addObject:[XFClass classWithClassName:className]];
         }
-        free(classes);
+        _classesMemory = classes;
     }
     
     return returnArray.copy;
+}
+
+- (void)dealloc {
+    free(_classesMemory);
 }
 
 @end

@@ -1,0 +1,45 @@
+//
+//  XFTypeDescriptor.m
+//  XFDebugMenu
+//
+//  Created by Manu Wallner on 10/11/13.
+//  Copyright (c) 2013 XForge. All rights reserved.
+//
+
+#import "XFTypeDescriptor.h"
+#import "XFPrimitiveTypeDescriptor.h"
+#import "XFObjectTypeDescriptor.h"
+#import "XFPointerTypeDescriptor.h"
+#import "XFStructTypeDescriptor.h"
+#import "XFFunctionPointerTypeDescriptor.h"
+#import "XFArrayTypeDescriptor.h"
+
+@implementation XFTypeDescriptor
+
++ (instancetype)typeDescriptorWithEncoding:(NSString *)encoding {
+    NSArray *descriptors = @[
+                             XFPrimitiveTypeDescriptor.class,
+                             XFObjectTypeDescriptor.class,
+                             XFStructTypeDescriptor.class,
+                             XFArrayTypeDescriptor.class,
+                             XFFunctionPointerTypeDescriptor.class,
+                             XFPointerTypeDescriptor.class
+                             ];
+    
+    for (Class descriptorClass in descriptors) {
+        if([descriptorClass isValidEncodingForDescriptor:encoding])
+            return [[descriptorClass alloc] initWithEncoding:encoding];
+    }
+    
+    return nil;
+}
+
++ (BOOL)isValidEncodingForDescriptor:(NSString *)encoding {
+    return NO;
+}
+
+- (instancetype)initWithEncoding:(NSString *)encoding {
+    return nil;
+}
+
+@end

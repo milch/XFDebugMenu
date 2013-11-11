@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XFProperty.h"
+#import "XFMethod.h"
+#import "XFClass.h"
+#import "XFVariable.h"
 
 @interface XFRuntime : NSObject
 

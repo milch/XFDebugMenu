@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+@class XFTypeDescriptor;
+
 @interface XFVariable : NSObject
 
 + (instancetype)variableWithPrimitive:(Ivar)ivar;
 - (id)valueForObject:(id)object;
 - (void)setValue:(id)value forObject:(id)object;
+
+@property (nonatomic, strong) XFTypeDescriptor *type;
 
 @end

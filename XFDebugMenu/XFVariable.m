@@ -7,6 +7,7 @@
 //
 
 #import "XFVariable.h"
+#import "XFTypeDescriptor.h"
 
 @interface XFVariable ()
 
@@ -24,6 +25,7 @@
     self = super.init;
     if (self) {
         _ivar = ivar;
+        _type = [XFTypeDescriptor typeDescriptorWithEncoding:@(ivar_getTypeEncoding(ivar))];
     }
     return self;
 }
@@ -34,6 +36,10 @@
 
 - (void)setValue:(id)value forObject:(id)object {
     object_setIvar(object, _ivar, value);
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ %s", _type.description, ivar_getName(_ivar)];
 }
 
 @end
