@@ -27,4 +27,14 @@
     return [NSString stringWithFormat:@"%@*", _innerTypeDescriptor.description];
 }
 
+- (BOOL)isEqual:(id)object {
+    if(![object isKindOfClass:self.class]) return NO;
+    XFPointerTypeDescriptor *otherType = (XFPointerTypeDescriptor *)object;
+    return [otherType.innerTypeDescriptor isEqual:self.innerTypeDescriptor];
+}
+
+- (BOOL)isPointer {
+    return YES;
+}
+
 @end

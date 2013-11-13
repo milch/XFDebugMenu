@@ -35,6 +35,9 @@
 		32F95ED4182FFDA4007740D7 /* XFArrayTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95ED3182FFDA4007740D7 /* XFArrayTypeDescriptor.m */; };
 		32F95ED7182FFDC3007740D7 /* XFFunctionPointerTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95ED6182FFDC3007740D7 /* XFFunctionPointerTypeDescriptor.m */; };
 		32F95ED918300E27007740D7 /* XFPropertyTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95ED818300E27007740D7 /* XFPropertyTypeTests.m */; };
+		32F95EDB1830C143007740D7 /* XFTypeDescriptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95EDA1830C143007740D7 /* XFTypeDescriptorTests.m */; };
+		32F95EDE1830C599007740D7 /* XFUnknownTypeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95EDD1830C599007740D7 /* XFUnknownTypeDescriptor.m */; };
+		32F95EE41830CC83007740D7 /* XFTypeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F95EE31830CC83007740D7 /* XFTypeMaker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,11 @@
 		32F95ED5182FFDC3007740D7 /* XFFunctionPointerTypeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFunctionPointerTypeDescriptor.h; sourceTree = "<group>"; };
 		32F95ED6182FFDC3007740D7 /* XFFunctionPointerTypeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFunctionPointerTypeDescriptor.m; sourceTree = "<group>"; };
 		32F95ED818300E27007740D7 /* XFPropertyTypeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPropertyTypeTests.m; sourceTree = "<group>"; };
+		32F95EDA1830C143007740D7 /* XFTypeDescriptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTypeDescriptorTests.m; sourceTree = "<group>"; };
+		32F95EDC1830C599007740D7 /* XFUnknownTypeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFUnknownTypeDescriptor.h; sourceTree = "<group>"; };
+		32F95EDD1830C599007740D7 /* XFUnknownTypeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFUnknownTypeDescriptor.m; sourceTree = "<group>"; };
+		32F95EE21830CC83007740D7 /* XFTypeMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTypeMaker.h; sourceTree = "<group>"; };
+		32F95EE31830CC83007740D7 /* XFTypeMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTypeMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,7 @@
 		32C2CFFA181D333100472A5E /* XFDebugMenuTests */ = {
 			isa = PBXGroup;
 			children = (
+				32F95EDA1830C143007740D7 /* XFTypeDescriptorTests.m */,
 				32F95ED818300E27007740D7 /* XFPropertyTypeTests.m */,
 				32C2D000181D333100472A5E /* XFDebugMenuTests.m */,
 				32C2CFFB181D333100472A5E /* Supporting Files */,
@@ -222,6 +231,8 @@
 			children = (
 				32F95EC2182FCFBA007740D7 /* XFTypeDescriptor.h */,
 				32F95EC3182FCFBA007740D7 /* XFTypeDescriptor.m */,
+				32F95EDC1830C599007740D7 /* XFUnknownTypeDescriptor.h */,
+				32F95EDD1830C599007740D7 /* XFUnknownTypeDescriptor.m */,
 				32F95ECF182FFD46007740D7 /* XFPointerTypeDescriptor.h */,
 				32F95ED0182FFD46007740D7 /* XFPointerTypeDescriptor.m */,
 				32F95ECC182FFB9F007740D7 /* XFStructTypeDescriptor.h */,
@@ -234,6 +245,8 @@
 				32F95EC7182FEAF1007740D7 /* XFPrimitiveTypeDescriptor.m */,
 				32F95EC9182FF8C4007740D7 /* XFObjectTypeDescriptor.h */,
 				32F95ECA182FF8C4007740D7 /* XFObjectTypeDescriptor.m */,
+				32F95EE21830CC83007740D7 /* XFTypeMaker.h */,
+				32F95EE31830CC83007740D7 /* XFTypeMaker.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -349,8 +362,10 @@
 				32C2CFE8181D333000472A5E /* main.m in Sources */,
 				32F95ED1182FFD46007740D7 /* XFPointerTypeDescriptor.m in Sources */,
 				323CE430182F865F006C7F46 /* XFClassesViewController.m in Sources */,
+				32F95EDE1830C599007740D7 /* XFUnknownTypeDescriptor.m in Sources */,
 				32F95ECB182FF8C4007740D7 /* XFObjectTypeDescriptor.m in Sources */,
 				32F95ECE182FFB9F007740D7 /* XFStructTypeDescriptor.m in Sources */,
+				32F95EE41830CC83007740D7 /* XFTypeMaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +375,7 @@
 			files = (
 				32F95ED918300E27007740D7 /* XFPropertyTypeTests.m in Sources */,
 				32C2D001181D333100472A5E /* XFDebugMenuTests.m in Sources */,
+				32F95EDB1830C143007740D7 /* XFTypeDescriptorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

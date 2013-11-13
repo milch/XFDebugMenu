@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class XFTypeMaker;
+
 @interface XFTypeDescriptor : NSObject
 
 + (BOOL)isValidEncodingForDescriptor:(NSString *)encoding;
++ (XFTypeMaker *)make;
 + (instancetype)typeDescriptorWithEncoding:(NSString *)encoding;
 
 - (instancetype)initWithEncoding:(NSString *)encoding;
+- (BOOL)isPrimitiveType;
+- (BOOL)isPointer;
+- (BOOL)isArray;
+- (instancetype)innerTypeDescriptor;
 
 @end

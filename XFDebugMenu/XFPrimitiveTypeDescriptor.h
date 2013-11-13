@@ -24,6 +24,8 @@ typedef NS_ENUM(uint, XFPrimitiveType) {
 
 @interface XFPrimitiveTypeDescriptor : XFTypeDescriptor
 
+- (instancetype)initWithType:(XFPrimitiveType)type isUnsigned:(BOOL)unsign;
+    
 @property (nonatomic, readonly) XFPrimitiveType type;
 @property (nonatomic, getter = isUnsigned, readonly) BOOL unsign;
 

@@ -11,6 +11,7 @@
 @implementation XFArrayTypeDescriptor
 
 + (BOOL)isValidEncodingForDescriptor:(NSString *)encoding {
+    //either num,ptr,type or [num,type]
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"([0-9]+\\^|\\[[0-9]+[a-zA-Z]\\])" options:0 error:nil];
     return [regex numberOfMatchesInString:encoding options:0 range:NSMakeRange(0, encoding.length)];
 }
@@ -42,6 +43,16 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@[%i]", _innerTypeDescriptor.description, _numberOfElements];
+}
+
+- (BOOL)isEqual:(id)object {
+    if(![object isKindOfClass:self.class]) return NO;
+    XFArrayTypeDescriptor *otherType = (XFArrayTypeDescriptor *)object;
+    return otherType.numberOfElements == self.numberOfElements && [otherType.innerTypeDescriptor isEqual:self.innerTypeDescriptor];
+}
+
+- (BOOL)isArray {
+    return YES;
 }
 
 @end

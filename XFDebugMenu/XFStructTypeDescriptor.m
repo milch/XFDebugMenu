@@ -37,4 +37,10 @@
     return _structName;
 }
 
+- (BOOL)isEqual:(id)object {
+    if(![object isKindOfClass:self.class]) return NO;
+    XFStructTypeDescriptor *otherType = (XFStructTypeDescriptor *)object;
+    return [otherType.structName isEqual:self.structName];
+}
+
 @end

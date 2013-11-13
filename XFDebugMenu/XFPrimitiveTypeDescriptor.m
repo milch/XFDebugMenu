@@ -23,6 +23,15 @@
     return self;
 }
 
+- (instancetype)initWithType:(XFPrimitiveType)type isUnsigned:(BOOL)unsign {
+    self = super.init;
+    if (self) {
+        _type = type;
+        _unsign = unsign;
+    }
+    return self;
+}
+
 - (void)parseEncoding:(NSString *)encoding {
     NSScanner *scanner = [NSScanner scannerWithString:encoding];
     NSString *actualType;
@@ -119,6 +128,16 @@
     }
     
     return [descrString copy];
+}
+
+- (BOOL)isEqual:(id)object {
+    if(![object isKindOfClass:self.class]) return NO;
+    XFPrimitiveTypeDescriptor *otherType = (XFPrimitiveTypeDescriptor *)object;
+    return otherType.unsign == self.unsign && otherType.type == self.type;
+}
+
+- (BOOL)isPrimitiveType {
+    return YES;
 }
 
 @end

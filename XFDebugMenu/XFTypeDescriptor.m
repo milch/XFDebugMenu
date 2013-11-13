@@ -13,8 +13,14 @@
 #import "XFStructTypeDescriptor.h"
 #import "XFFunctionPointerTypeDescriptor.h"
 #import "XFArrayTypeDescriptor.h"
+#import "XFUnknownTypeDescriptor.h"
+#import "XFTypeMaker.h"
 
 @implementation XFTypeDescriptor
+
++ (XFTypeMaker *)make {
+    return [XFTypeMaker new];
+}
 
 + (instancetype)typeDescriptorWithEncoding:(NSString *)encoding {
     NSArray *descriptors = @[
@@ -23,7 +29,8 @@
                              XFStructTypeDescriptor.class,
                              XFArrayTypeDescriptor.class,
                              XFFunctionPointerTypeDescriptor.class,
-                             XFPointerTypeDescriptor.class
+                             XFPointerTypeDescriptor.class,
+                             XFUnknownTypeDescriptor.class
                              ];
     
     for (Class descriptorClass in descriptors) {
@@ -39,6 +46,22 @@
 }
 
 - (instancetype)initWithEncoding:(NSString *)encoding {
+    return nil;
+}
+
+- (BOOL)isPrimitiveType {
+    return NO;
+}
+
+- (BOOL)isPointer {
+    return NO;
+}
+
+- (BOOL)isArray {
+    return NO;
+}
+
+- (instancetype)innerTypeDescriptor {
     return nil;
 }
 

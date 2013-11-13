@@ -17,9 +17,15 @@
 - (instancetype)initWithEncoding:(NSString *)encoding {
     self = super.init;
     if (self) {
+        //TODO: find out what the exact encoding for a function pointer is, as there is no info on the apple docs
         NSLog(@"encoding %@", encoding);
+        _encoding = encoding;
     }
     return self;
+}
+
+- (BOOL)isEqual:(id)object {
+    return [[self encoding] isEqual:[object encoding]];
 }
 
 @end
